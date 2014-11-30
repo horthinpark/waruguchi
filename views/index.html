@@ -26,12 +26,13 @@
         <div class="kenasu-container">
           <ul class="unstyled">
             <li ng-repeat="post in posts" class="kenasu kenasu-item">
-              <span class="kenasu-content">あいつ{{post.content}}</span>
+              <span class="kenasu-content" ng-class="{'hidden': post.favCount >= THRESHOLD }">あいつ{{post.content}}</span>
+              <span class="kenasu-content" ng-class="{'hidden': post.favCount < THRESHOLD }">{{post.targetName}}{{post.content}}</span>
               <div class='fav-button-group'>
                 <form ng-submit="addFavCount(post)" class="fav-button">
                   <button type="submit" class="fav-count-button fa fa-thumbs-o-up"></button>
                 </form>
-                <span>{{post.fav_count}}</span>
+                <span>{{post.favCount}}</span>
               </div>
               <span style="clear:both;"></span>
             </li>
@@ -45,7 +46,7 @@
     <div class='row footer'>
       <form ng-submit="addPost()">
         <div class='input-kenasu input-group'>
-          <input class='input-user_name form-control' maxLength=10 ng-model="userName" placeholder='あいつ'>
+          <input class='input-user_name form-control' maxLength=10 ng-model="targetName" placeholder='あいつ'>
           <input class='input-content form-control' type="text" ng-model="postContent" maxLength=100 placeholder="がきもい。">
           <span class="input-group-btn">
             <input class='btn btn-success'type="submit" value="send">

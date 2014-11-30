@@ -146,3 +146,7 @@ html, body {
   list-style:none;
   padding: 5px;
 }
+
+.hidden {
+  display: none;
+}
