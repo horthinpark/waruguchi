@@ -72,5 +72,8 @@ server = http.createServer(onRequest)
 io = socketIO.listen server
 io.set 'origins', '*:*'
 io.sockets.on 'connection', (socket) ->
-  socket.emit 'connected'
+  socket.join 'room'
+  socket.on 'message', (data) ->
+    socket.broadcast.emit 'post', data
+
 server.listen 9999
