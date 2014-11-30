@@ -8,7 +8,7 @@ angular.module('waruguchiApp', [])
       {targetName: '川辺', content:'がきもい'}];
 
     $scope.addPost = function() {
-      $scope.posts.push({user_name: $scope.userName, content:$scope.postText});
-      $scope.postText = '';
+      $scope.posts.push({user_name: $scope.userName, content: $scope.postContent});
+      $scope.postContent = '';
     };
 }]);

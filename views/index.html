@@ -16,13 +16,12 @@
   <script type='text/javascript' src='index.js'></script>
 </head>
 <body>
-  <div class='container-fluid'>
+  <div class='container-fluid' ng-controller="PostController">
     <div class='row header'>
       <h1 align='center'>Waruguchi<small>思ってることは、すぐに言った方がいい。</small></h1>
     </div>
-  <div class='row content'>
-    <div class="col-md-8 col-md-offset-2">
-      <div ng-controller="PostController">
+    <div class='row content'>
+      <div class="col-md-8 col-md-offset-2 main-content">
         <div class="kenasu-container">
           <ul class="unstyled">
             <li ng-repeat="post in posts" class="kenasu kenasu-item">
@@ -33,16 +32,18 @@
             </li>
           </ul>
         </div>
-        <form ng-submit="addPost()">
-          <div class='input-kenasu input-group'>
-            <input class='user_name form-control' maxLength=10 ng-model="userName" placeholder='あいつ'>
-            <input class='form-control' type="text" ng-model="postContent" maxLength=100 placeholder="きもい。">
-            <span class="input-group-btn">
-              <input class='btn btn-success'type="submit" value="send">
-            </span>
-          </div>
-        </form>
       </div>
+    </div>
+    <div class='row footer'>
+      <form ng-submit="addPost()">
+        <div class='input-kenasu input-group'>
+          <input class='input-user_name form-control' maxLength=10 ng-model="userName" placeholder='あいつ'>
+          <input class='input-content form-control' type="text" ng-model="postContent" maxLength=100 placeholder="がきもい。">
+          <span class="input-group-btn">
+            <input class='btn btn-success'type="submit" value="send">
+          </span>
+        </div>
+      </form>
     </div>
   </div>
 </body>

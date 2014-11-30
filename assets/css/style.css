@@ -30,14 +30,22 @@
 
 .content {
   margin-top: 80px;
+  margin-bottom: 80px;
+  position: relative;
+  height: auto !important;
+  height: calc(100% - 160px);
+  min-height: calc(100% - 160px);
 }
 
+.main-content {
+}
 /*
  * Item in feed
  */
 
 .kenasu-container {
   border: 3px solid #e1e8ed;
+  background-color: white;
 }
 
 .kenasu {
@@ -77,9 +85,38 @@
   background-color: #04B4AE;
 }
 
+input.input-user_name {
+  float:left;
+  width: 20% !important;
+}
+
+input.input-content {
+  width: 80% !important;
+}
+
+/*
+ * FOOTER
+ */
+
+.footer {
+  height: 80px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
 /*
  * COMMON
  */
+
+html, body {
+  height: 100%;
+  background-image: url(http://lisperati.com/lisplogo_alien_256.png);
+}
+
+.container-fluid {
+  height: 100%;
+}
 
 .unstyled {
   list-style:none;
