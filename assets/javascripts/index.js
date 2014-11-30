@@ -1,3 +1,4 @@
+socket = io('http://localhost:9999');
 angular.module('waruguchiApp', [])
   .controller('PostController', ['$scope', function($scope) {
     $scope.posts = [

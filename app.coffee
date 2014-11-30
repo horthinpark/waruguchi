@@ -1,4 +1,5 @@
 http = require 'http'
+socketIO = require 'socket.io'
 fs = require 'fs'
 url = require 'url'
 
@@ -67,4 +68,9 @@ router = (req, res) ->
     res.writeHead '500'
     res.end()
 
-http.createServer(onRequest).listen 9999
+server = http.createServer(onRequest)
+io = socketIO.listen server
+io.set 'origins', '*:*'
+io.sockets.on 'connection', (socket) ->
+  socket.emit 'connected'
+server.listen 9999
