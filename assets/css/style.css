@@ -3,7 +3,7 @@
  */
 
 .header {
-  background-color: #ddd;
+  background-color: #8ae690;
   height: 60px;
   width: 100%;
   position: fixed;
@@ -39,6 +39,7 @@
 
 .main-content {
 }
+
 /*
  * Item in feed
  */
@@ -70,11 +71,23 @@
 
 .kenasu-content {
   float: left;
+  width: calc(100% - 60px);
+}
+
+.fav-button-group {
+  display: inline-block;
+  width: 60px;
 }
 
 .fav-button {
   float: left;
   margin-left: 10px;
+}
+
+.fav-count-button {
+  border: none;
+  background-color: white;
+  color: #555;
 }
 
 .inputed-kenasu {
