@@ -20,14 +20,19 @@
     <div class='row header'>
       <h1 align='center'>Waruguchi<small>思ってることは、すぐに言った方がいい。</small></h1>
     </div>
-    <div class='row content'>
+  <div class='row content'>
+    <div class="col-md-8 col-md-offset-2">
       <div ng-controller="PostController">
-        <ul class="unstyled">
-          <li ng-repeat="post in posts">
-            <span >{{post.text}}</span>
-          </li>
-          <li>{{postText}}</li>
-        </ul>
+        <div class="kenasu-container">
+          <ul class="unstyled">
+            <li ng-repeat="post in posts" class="kenasu">
+              <span >{{post.text}}</span>
+            </li>
+            <li class="input-kenasu">
+              <span>{{user_name}}：{{postText}}</span>
+            </li>
+          </ul>
+        </div>
         <form ng-submit="addPost()">
           <label class='user_name'>{{user_name}}</label>
           <input type="text" ng-model="postText"  size="140" placeholder="まわりの人をけなそう">
