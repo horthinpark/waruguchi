@@ -19,11 +19,16 @@ angular.module('waruguchiApp', [])
 
     socket = io.connect('http://localhost:9999');
     socket.on('post', function (data) {
-      var found = findByPostid(data.post_id, $scope.posts)[0]
+      var post = data.post;
+      var found = findByPostid(post.post_id, $scope.posts)[0]
       if (!found) {
-        $scope.posts.push(data);
+        if (data.type == 'new') {
+          $scope.posts.push(post);
+        }
       } else {
-        found.favCount+= 1
+        if (data.type == 'count') {
+          found.favCount+= 1
+        }
       }
       $scope.$apply();
     })
@@ -33,14 +38,19 @@ angular.module('waruguchiApp', [])
       {targetName: '川辺', content:'がきもい', favCount: 0, post_id: 2}];
 
     $scope.addPost = function() {
-      post = {targetName: $scope.targetName, content: $scope.postContent, favCount: 0, post_id: uuid()};
-      socket.send(post);
+      post = {
+        targetName: $scope.targetName,
+        content: $scope.postContent,
+        favCount: 0,
+        post_id: uuid()
+      };
+      socket.send({type: 'new', post: post});
       $scope.posts.push(post);
       $scope.postContent = '';
     };
     
     $scope.addFavCount = function(post) {
-      socket.send(post);
+      socket.send({type: 'count', post: post});
       post.favCount += 1;
     };
 }]);
