@@ -25,7 +25,12 @@
         <div class="kenasu-container">
           <ul class="unstyled">
             <li ng-repeat="post in posts" class="kenasu kenasu-item">
-              <span >あいつ{{post.content}}</span>
+              <span class="kenasu-content">あいつ{{post.content}}</span>
+              <form ng-submit="addFavCount(post)" class="fav-button">
+                <button type="submit" class="btn-xs btn-warning fav-count-button">気になる</button>
+              </form>
+              <span>{{post.fav_count}}</span>
+              <span style="clear:both;"></span>
             </li>
             <li class="kenasu inputed-kenasu">
               <span>あいつ{{postContent}}</span>

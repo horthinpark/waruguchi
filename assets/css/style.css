@@ -68,6 +68,15 @@
   font-size: 18px;
 }
 
+.kenasu-content {
+  float: left;
+}
+
+.fav-button {
+  float: left;
+  margin-left: 10px;
+}
+
 .inputed-kenasu {
   font-weight: bold;
 }
