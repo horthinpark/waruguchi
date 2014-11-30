@@ -3,17 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Waruguchi</title>
+  <!-- AngularJS -->
   <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js'></script>
-  <!-- Latest compiled and minified CSS -->
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <!-- Latest compiled and minified JavaScript -->
+  <!-- bootstrap JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type='text/javascript' src='index.js'></script>
 </head>
 <body>
   <h1>Waruguchi<small>思ってることは、すぐに言った方がいい。</small></h1>
-  <div class="row">
-    <div class="col-md-8">.col-md-8</div>
-    <div class="col-md-4">.col-md-4</div>
+  <div ng-controller="PostController">
+    <span>{{remaining()}} of {{todos.length}} remaining</span>
+    [ <a href="" ng-click="archive()">archive</a> ]
+    <ul class="unstyled">
+      <li ng-repeat="todo in todos">
+      <input type="checkbox" ng-model="todo.done">
+      <span class="done-{{todo.done}}">{{todo.text}}</span>
+      </li>
+    </ul>
+    <form ng-submit="addPost()">
+      <input type="text" ng-model="postText"  size="30" placeholder="まわりの人をけなそう">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
   </div>
 </body>
 </html>
