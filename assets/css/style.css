@@ -1,6 +1,7 @@
 /*
  * HEADER
  */
+
 .header {
   background-color: #ddd;
   height: 60px;
@@ -23,8 +24,24 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/*
+ * CONTENT
+ */
+
 .content {
   margin-top: 60px;
+}
+
+/*
+ * Item in feed
+ */
+
+.content {
+  margin-top: 60px
+}
+
+.kenasu-container {
+  border: 3px solid #e1e8ed;
 }
 
 .kenasu {
@@ -34,22 +51,20 @@
   padding: 3px;
 }
 
+/*
+ * Input form for Kenasu
+ */
+
 .input-kenasu {
   line-height: inherit;
   font-size: 15px;
   padding: 3px;
 }
 
-.content {
-  margin-top: 60px
-}
-
+/*
+ * COMMON
+ */
 .unstyled {
   list-style:none;
   padding: 5px;
 }
-
-.kenasu-container {
-  border: 3px solid #e1e8ed;
-}
-
