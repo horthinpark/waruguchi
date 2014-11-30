@@ -26,3 +26,30 @@
 .content {
   margin-top: 60px;
 }
+
+.kenasu {
+  line-height: inherit;
+  border-bottom: 1px solid #e1e8ed;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.input-kenasu {
+  line-height: inherit;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.content {
+  margin-top: 60px
+}
+
+.unstyled {
+  list-style:none;
+  padding: 5px;
+}
+
+.kenasu-container {
+  border: 3px solid #e1e8ed;
+}
+
