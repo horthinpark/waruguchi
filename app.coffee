@@ -74,6 +74,6 @@ io.set 'origins', '*:*'
 io.sockets.on 'connection', (socket) ->
   socket.join 'room'
   socket.on 'message', (data) ->
-    socket.broadcast.emit 'post', data
+    io.sockets.emit 'post', data
 
 server.listen 9999

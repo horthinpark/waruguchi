@@ -24,10 +24,13 @@ angular.module('waruguchiApp', [])
       if (!found) {
         if (data.type == 'new') {
           $scope.posts.push(post);
+        } else if (data.type == 'count') {
+          post.favCount += 1;
+          $scope.posts.push(post);
         }
       } else {
         if (data.type == 'count') {
-          found.favCount+= 1
+          found.favCount += 1;
         }
       }
       $scope.$apply();
@@ -45,12 +48,10 @@ angular.module('waruguchiApp', [])
         post_id: uuid()
       };
       socket.send({type: 'new', post: post});
-      $scope.posts.push(post);
       $scope.postContent = '';
     };
     
     $scope.addFavCount = function(post) {
       socket.send({type: 'count', post: post});
-      post.favCount += 1;
     };
 }]);
