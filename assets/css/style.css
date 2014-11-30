@@ -1,3 +1,28 @@
-p {
-  color: cyan;
+/*
+ * HEADER
+ */
+.header {
+  background-color: #ddd;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  z-index: 1030;
+  display: inline;
+}
+
+.header h1 {
+  margin: 0;
+  height: 60px;
+  line-height: 60px;
+  color: #555;
+  font-family: Impact,Charcoal;
+}
+
+.header h1 small {
+  padding-left: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.content {
+  margin-top: 60px;
 }
