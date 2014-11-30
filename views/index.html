@@ -16,19 +16,23 @@
   <script type='text/javascript' src='index.js'></script>
 </head>
 <body>
-  <h1>Waruguchi<small>思ってることは、すぐに言った方がいい。</small></h1>
-  <div ng-controller="PostController">
-    <ul class="unstyled">
-      <li ng-repeat="post in posts">
-        <span >{{post.text}}</span>
-      </li>
-      <li>{{postText}}</li>
-    </ul>
-    <form ng-submit="addPost()">
-      <label class='user_name'>{{user_name}}</label>
-      <input type="text" ng-model="postText"  size="140" placeholder="まわりの人をけなそう">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
+  <div class='header'>
+    <h1>Waruguchi<small>思ってることは、すぐに言った方がいい。</small></h1>
+  </div>
+  <div class='content' >
+    <div ng-controller="PostController">
+      <ul class="unstyled">
+        <li ng-repeat="post in posts">
+          <span >{{post.text}}</span>
+        </li>
+        <li>{{postText}}</li>
+      </ul>
+      <form ng-submit="addPost()">
+        <label class='user_name'>{{user_name}}</label>
+        <input type="text" ng-model="postText"  size="140" placeholder="まわりの人をけなそう">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
   </div>
 </body>
 </html>
