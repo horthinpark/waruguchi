@@ -26,17 +26,17 @@
         <div class="kenasu-container">
           <ul class="unstyled">
             <li ng-repeat="post in posts" class="kenasu kenasu-item">
-              <span >{{post.content}}</span>
+              <span >あいつ{{post.content}}</span>
             </li>
             <li class="kenasu inputed-kenasu">
-              <span>{{userName}}が{{postText}}</span>
+              <span>あいつ{{postContent}}</span>
             </li>
           </ul>
         </div>
         <form ng-submit="addPost()">
           <div class='input-kenasu input-group'>
-            <input class='user_name form-control' maxLength=10 ng-model="userName">
-            <input class='form-control' type="text" ng-model="postText" maxLength=100 placeholder="あの人をけなそう。">
+            <input class='user_name form-control' maxLength=10 ng-model="userName" placeholder='あいつ'>
+            <input class='form-control' type="text" ng-model="postContent" maxLength=100 placeholder="きもい。">
             <span class="input-group-btn">
               <input class='btn btn-success'type="submit" value="send">
             </span>

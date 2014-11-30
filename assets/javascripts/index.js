@@ -4,8 +4,8 @@ angular.module('waruguchiApp', [])
     $scope.user_name = 'Kawabe';
 
     $scope.posts = [
-      {content:'川辺うざい'},
-      {content:'川辺きもい'}];
+      {targetName: '川辺', content:'がうざい'},
+      {targetName: '川辺', content:'がきもい'}];
 
     $scope.addPost = function() {
       $scope.posts.push({user_name: $scope.userName, content:$scope.postText});
