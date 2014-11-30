@@ -26,15 +26,15 @@
         <div class="kenasu-container">
           <ul class="unstyled">
             <li ng-repeat="post in posts" class="kenasu">
-              <span >{{post.text}}</span>
+              <span >{{post.content}}</span>
             </li>
             <li class="input-kenasu">
-              <span>{{user_name}}：{{postText}}</span>
+              <span>{{userName}}：{{postText}}</span>
             </li>
           </ul>
         </div>
         <form ng-submit="addPost()">
-          <label class='user_name'>{{user_name}} :</label>
+          <input class='user_name' ng-model="userName">
           <input type="text" ng-model="postText"  size="140" placeholder="まわりの人をけなそう">
           <input class="btn-primary" type="submit" value="add">
         </form>
